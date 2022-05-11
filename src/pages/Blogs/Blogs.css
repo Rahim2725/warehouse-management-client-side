@@ -1,0 +1,15 @@
+.blogs-container {
+    text-align: justify;
+}
+
+.blogs-container div {
+    border: 3px solid rgba(128, 128, 128, 0.253);
+    padding: 20px;
+    margin: 10px;
+    border-radius: 20px;
+}
+
+.blogs-container div:hover {
+    background-color: rgba(128, 128, 128, 0.253);
+    border: 1px solid rgba(red, green, blue, alpha);
+}
