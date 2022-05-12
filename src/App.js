@@ -1,11 +1,11 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Header from './pages/Header/Header';
-import Home from './pages/Home/Home';
 import Footer from './pages/Footer/Footer';
 import Login from './pages/Login/Login/Login';
 import Blogs from './pages/Blogs/Blogs';
 import Register from './pages/Login/Register/Register';
+import Home from './pages/Home/Home/Home';
+import Header from './pages/Home/Header/Header';
 
 function App() {
   return (
