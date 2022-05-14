@@ -10,6 +10,8 @@ import Products from './pages/Products/Products';
 import ProductDetail from './pages/productDetail/ProductDetail';
 import RequireAuth from './pages/Login/RequireAuth/RequireAuth';
 import AddProduct from './pages/AddProduct/AddProduct';
+import { ToastContainer } from 'react-toastify';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
@@ -27,7 +29,7 @@ function App() {
          <RequireAuth>
            <ProductDetail></ProductDetail>
          </RequireAuth>
-       }></Route>
+       }></Route> 
      
        <Route path='/addProduct' element={
          <RequireAuth>
@@ -37,6 +39,7 @@ function App() {
      
      </Routes>
      <Footer></Footer>
+     <Toaster/>
     </div>
   );
 }

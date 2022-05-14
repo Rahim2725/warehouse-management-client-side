@@ -12,14 +12,14 @@ const Section = () => {
                 </div>
                 <div>
                     <h1>Xiaomi Redmi Note 8 </h1>
-                    <p>Xiaomi Redmi Note 8 comes with 6.3 inches Full HD+ IPS screen. It has a Full-View waterdrop-notch design. There is Gorilla Glass 5 protection on the front and backside. The back camera is of quad 48+8+2+2 MP with PDAF, ultrawide, depth sensor etc. and 4K video recording with gyro-EIS for 1080p recording....... </p>
+                    <p>Back in May, Xiaomi sub-brand Redmi announced it sold over 25 million units of the original Redmi Note 8 globally. And to celebrate the milestone, the company introduced a refreshed version of the Redmi Note 8, dubbed Redmi Note 8 2021, which we have with us today at the office for the full review.</p>
                     <button>More Details</button>
                 </div>
             </section>
             <section>
                 <div className='phone-info-area-2'>
                     <h1>Apple iPhone 13 Pro Max</h1>
-                    <p>Apple iPhone 13 Pro Max comes with a 6.7 inches Super Retina XDR OLED Full HD+ screen. It has a Apple iPhone notch design. The back camera is of quad 12+12+12 Megapixel + TOF 3D LiDAR scanner with powerful image processing capability and 4K video recording.......</p>
+                    <p>Phone 13 Pro was made for low light. The Wide camera adds a wider aperture and our largest sensor yet — and it leverages the LiDAR Scanner for Night mode portraits. Ultra Wide gets a wider aperture, a faster sensor, and all-new autofocus. And Telephoto now has Night mode.</p>
                     <button>More Details</button>
                 </div>
                 <div className='phone-img-area-2'>

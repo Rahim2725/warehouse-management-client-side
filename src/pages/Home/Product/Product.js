@@ -35,12 +35,6 @@ const Product = () => {
                         </div>)
                 }
             </CardGroup >
-
-            <div className=' my-5 text-center'>
-                <Link to="/products">
-                    <button>ALL Products</button>
-                </Link>
-            </div>
         </div >
     );
 };

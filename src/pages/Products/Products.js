@@ -6,7 +6,7 @@ import useProducts from '../hooks/useProducts';
 const Products = () => {
     const [products] = useProducts();
     const navigate = useNavigate();
-    const prodcutDetails = id => {
+    const Delate = id => {
         navigate(`/product/${id}`)
     }
     return (
@@ -25,7 +25,7 @@ const Products = () => {
                                     <Card.Text>Quantity: {product.quantity}</Card.Text>
                                     <Card.Text> Supplier name: {product.supplier_name}</Card.Text>
                                 </Card.Body>
-                                <button onClick={() => prodcutDetails(product._id)} className='w-100'>Update</button>
+                                <button onClick={() => Delate(product._id)} className='w-100'>Delate</button>
                             </Card>
                         </div>)
                 }

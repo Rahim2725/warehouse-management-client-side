@@ -5,19 +5,39 @@ const ProductDetail = () => {
     const { productId } = useParams();
     const [product, setProduct] = useState({})
 
+    const [quantity, setQuantity] = useState(0)
+
+
+
     useEffect(() => {
-        const url = `http://localhost:5000/phones/${productId}`
+        const url = `http://localhost:5000/product/${productId}`
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [])
 
-    const { name, img, description, price, quantity, supplier_name } = product;
+    const { name, img, description, price, supplier_name } = product;
 
 
     const handleAddQuantity = event => {
         event.preventDefault();
-        console.log('deliverd is click')
+        const number  = parseInt(event.target.number.value) 
+        const oldQuantity = parseInt(quantity);
+        const newQuantity = oldQuantity + number ;
+        setQuantity(newQuantity);
+        event.target.reset()
+    }
+
+    const handleDeliverd = () =>{
+        const oldQuantity = parseInt(quantity)
+        if(oldQuantity > 0){
+           const newQuantity = oldQuantity - 1 ;
+           setQuantity(newQuantity);
+        }
+        else{
+            alert('Please Add Quantity')
+        }
+
     }
 
     return (
@@ -30,12 +50,17 @@ const ProductDetail = () => {
                 <p><small>Supplier Name : {supplier_name}</small></p>
                 <p>Quantity: {quantity}</p>
                 <div className='d-flex justify-content-around'>
-                    <button>Delivered</button>
+                    <button onClick={handleDeliverd}>Delivered</button>
                     <form onSubmit={handleAddQuantity}>
                         <input type="number" name="number" id="" placeholder='Quantity Only Number' required />
                         <input type="submit" value="Add" />
                     </form>
                 </div>
+            </div>
+            <div className=' my-5 text-center'>
+            <Link to="/products">
+                <button>ALL Products</button>
+            </Link>
             </div>
         </div>
     );
