@@ -3,6 +3,7 @@ import React from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import SciolLogin from '../SciolLogin/SciolLogin';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -36,6 +37,7 @@ const Login = () => {
             </form>
             <p>New create a account ? <Link to="/register">Register</Link> </p>
             <p>Password ? <a href=""> Reast</a> </p>
+            <SciolLogin></SciolLogin>
         </div>
     );
 };

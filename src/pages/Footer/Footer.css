@@ -1,0 +1,41 @@
+footer {
+    background-color: WhiteSmoke;
+}
+
+.info-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 100px;
+}
+
+.adders-area div {
+    border: 1px solid black;
+}
+
+.link-area {
+    margin: 0 auto;
+
+}
+
+.link-area a {
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+
+.link-area a:hover {
+    font-weight: 700;
+    color: orange;
+}
+
+.about-company img {
+    border: 1px solid black;
+    padding: 3px;
+    margin-right: 10px;
+}
+
+.about-company img:hover {
+    padding: 3px;
+    border-radius: 10px;
+    border: 2px solid orange;
+}

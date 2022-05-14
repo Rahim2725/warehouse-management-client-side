@@ -1,0 +1,36 @@
+.or-div {
+    display: flex;
+    justify-self: center;
+    align-items: center;
+}
+
+.or-div div {
+    width: 50%;
+    border-bottom: 1px solid gray;
+}
+
+.or-div p {
+    margin: 0 15px;
+}
+
+.sign-google {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 5px 0;
+    font-size: 20px;
+    border: 1px solid black;
+    background-color: white;
+}
+
+.sign-google:hover {
+    border: 3px solid orange;
+    border-radius: 10px;
+}
+
+.sign-google p {
+    margin-bottom: 0px;
+    margin-left: 20px;
+}
