@@ -1,9 +1,14 @@
 import React from 'react';
 import { Card, CardGroup } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import useProducts from '../hooks/useProducts';
 
 const Products = () => {
     const [products] = useProducts();
+    const navigate = useNavigate();
+    const prodcutDetails = id => {
+        navigate(`/product/${id}`)
+    }
     return (
         <div className='container'>
             <h1 className='text-center'>Latest Official Phones</h1>
@@ -20,7 +25,7 @@ const Products = () => {
                                     <Card.Text>Quantity: {product.quantity}</Card.Text>
                                     <Card.Text> Supplier name: {product.supplier_name}</Card.Text>
                                 </Card.Body>
-                                <button className='w-100'>Delete</button>
+                                <button onClick={() => prodcutDetails(product._id)} className='w-100'>Update</button>
                             </Card>
                         </div>)
                 }

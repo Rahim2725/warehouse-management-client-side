@@ -7,7 +7,9 @@ import Register from './pages/Login/Register/Register';
 import Home from './pages/Home/Home/Home';
 import Header from './pages/Home/Header/Header';
 import Products from './pages/Products/Products';
-import ProductDetail from './productDetail/ProductDetail';
+import ProductDetail from './pages/productDetail/ProductDetail';
+import RequireAuth from './pages/Login/RequireAuth/RequireAuth';
+import AddProduct from './pages/AddProduct/AddProduct';
 
 function App() {
   return (
@@ -17,10 +19,22 @@ function App() {
        <Route path='/' element={<Home></Home>}></Route>
        <Route path='/home' element={<Home></Home>}></Route>
        <Route path='/blogs' element={<Blogs></Blogs>}></Route>
-       <Route path='/products' element={<Products></Products>}></Route>
-       <Route path='/product/:productId' element={<ProductDetail></ProductDetail>}></Route>
        <Route path='/login' element={<Login></Login>}></Route>
+
        <Route path='/register' element={<Register></Register>}></Route>
+       <Route path='/products' element={<Products></Products>}></Route>
+       <Route path='/product/:productId' element={
+         <RequireAuth>
+           <ProductDetail></ProductDetail>
+         </RequireAuth>
+       }></Route>
+     
+       <Route path='/addProduct' element={
+         <RequireAuth>
+           <AddProduct></AddProduct>
+         </RequireAuth>
+       }></Route>
+     
      </Routes>
      <Footer></Footer>
     </div>

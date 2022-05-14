@@ -1,12 +1,14 @@
-import { signInWithEmailAndPassword } from 'firebase/auth';
 import React from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import SciolLogin from '../SciolLogin/SciolLogin';
 
 const Login = () => {
     const navigate = useNavigate();
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
+
     const [
         signInWithEmailAndPassword,
         user,
@@ -22,7 +24,7 @@ const Login = () => {
     }
 
     if(user){
-        navigate('/home');
+        navigate(from, { replace: true });
     }
 
     return (

@@ -33,9 +33,9 @@ const Header = () => {
                                 user ?
                                     <>
                                         <Nav.Link as={Link} to="/mangeItem">Mange-Item</Nav.Link>
-                                        <Nav.Link as={Link} to="/addItem">Add-Item</Nav.Link>
-                                        <Nav.Link as={Link} to="/myItem">My-Item</Nav.Link>
-                                        <Nav.Link onClick={logout} as={Link} to="/logout">Logout</Nav.Link>
+                                        <Nav.Link as={Link} to="/addProduct">Add-Product</Nav.Link>
+                                        <Nav.Link as={Link} to="/myItem">My-Product</Nav.Link>
+                                        <Nav.Link onClick={logout} as={Link} to="/">Logout</Nav.Link>
                                     </>
                                     :
                                     <Nav.Link as={Link} to="/login" >

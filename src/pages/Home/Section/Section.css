@@ -1,0 +1,39 @@
+section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+section div {
+    width: 45%;
+
+}
+
+section div button {
+    border: none;
+    background-color: orange;
+    padding: 5px 10px;
+    color: white;
+    font-weight: 500;
+    border-radius: 10px;
+}
+
+@media only screen and (max-width: 576px) {
+    section {
+        display: block;
+    }
+
+    section div {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .phone-img-area-2 {
+        order: 1;
+    }
+
+    .phone-info-area-2 {
+        order: 2;
+    }
+
+}

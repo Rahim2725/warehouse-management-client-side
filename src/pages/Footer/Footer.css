@@ -39,3 +39,14 @@ footer {
     border-radius: 10px;
     border: 2px solid orange;
 }
+
+@media only screen and (max-width: 576px) {
+    .info-container {
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 30px;
+    }
+
+    .link-area {
+        margin: 0;
+    }
+}

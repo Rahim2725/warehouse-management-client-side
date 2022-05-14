@@ -6,6 +6,7 @@ import './Product.css'
 
 const Product = () => {
     const [products, setProducts] = useProducts();
+    
     console.log(products);
 
     const navigate = useNavigate();
@@ -29,11 +30,17 @@ const Product = () => {
                                     <Card.Text>Description: {product.description.slice(0, 55)}.....</Card.Text>
                                     <Card.Text>Quantity: {product.quantity}</Card.Text>
                                 </Card.Body>
-                                <button onClick={() => prodcutDetails(product._id) } className='w-100'>Update</button>
+                                <button onClick={() => prodcutDetails(product._id)} className='w-100'>Update</button>
                             </Card>
                         </div>)
                 }
             </CardGroup >
+
+            <div className=' my-5 text-center'>
+                <Link to="/products">
+                    <button>ALL Products</button>
+                </Link>
+            </div>
         </div >
     );
 };

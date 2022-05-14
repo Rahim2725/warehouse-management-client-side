@@ -37,11 +37,6 @@ const ProductDetail = () => {
                     </form>
                 </div>
             </div>
-            <div className=' mt-5 text-center'>
-                <Link to="/products">
-                    <button>ALL Products</button>
-                </Link>
-            </div>
         </div>
     );
 };
