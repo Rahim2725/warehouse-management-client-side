@@ -1,12 +1,19 @@
 import React from 'react';
 import { Card, CardGroup } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import useProducts from '../../hooks/useProducts';
 import './Product.css'
 
-const Products = () => {
+const Product = () => {
     const [products, setProducts] = useProducts();
     console.log(products);
+
+    const navigate = useNavigate();
+
+    const prodcutDetails = id => {
+        navigate(`/product/${id}`)
+    }
+
     return (
         <div className='container mt-5'>
             <h1 className='text-center mb-5'>Latest Official Phones</h1>
@@ -20,16 +27,15 @@ const Products = () => {
                                     <Card.Title>{product.name}</Card.Title>
                                     <Card.Text>Price : ৳ {product.price}</Card.Text>
                                     <Card.Text>Description: {product.description.slice(0, 55)}.....</Card.Text>
-
+                                    <Card.Text>Quantity: {product.quantity}</Card.Text>
                                 </Card.Body>
-                                <button className='w-100'>Update</button>
+                                <button onClick={() => prodcutDetails(product._id) } className='w-100'>Update</button>
                             </Card>
                         </div>)
                 }
-            <Link to="allProducts">ALL Phones</Link>
             </CardGroup >
         </div >
     );
 };
 
-export default Products;
+export default Product;
