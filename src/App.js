@@ -13,6 +13,7 @@ import AddProduct from './pages/AddProduct/AddProduct';
 import { ToastContainer } from 'react-toastify';
 import { Toaster } from 'react-hot-toast';
 import MyProduct from './pages/MyProduct/MyProduct';
+import NotFound from './pages/NotFound/NotFound';
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
           </RequireAuth>
         }></Route>
 
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
       <Toaster />
