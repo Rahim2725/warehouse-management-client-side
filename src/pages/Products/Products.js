@@ -1,13 +1,22 @@
 import React from 'react';
 import { Card, CardGroup } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
 import useProducts from '../hooks/useProducts';
 
 const Products = () => {
-    const [products] = useProducts();
-    const navigate = useNavigate();
+    const [products, setProducts] = useProducts();
     const Delate = id => {
-        navigate(`/product/${id}`)
+        const sure = window.confirm('Are You Sure?')
+        if (sure) {
+            const url = `http://localhost:5000/product/${id}`
+            fetch(url, {
+                method: 'DELETE',
+            })
+                .then(res => res.json())
+                .then(data => {
+                    const remaining = products.filter(product => product._id !== id);
+                    setProducts(remaining);
+                })
+        }
     }
     return (
         <div className='container'>
