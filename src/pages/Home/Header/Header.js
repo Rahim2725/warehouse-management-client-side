@@ -34,7 +34,7 @@ const Header = () => {
 
                                         <Nav.Link as={Link} to="/products">Products</Nav.Link>
                                         <Nav.Link as={Link} to="/addProduct">Add-Product</Nav.Link>
-                                        <Nav.Link as={Link} to="/myItem">My-Product</Nav.Link>
+                                        <Nav.Link as={Link} to="/myproduct">My-Product</Nav.Link>
                                         <Nav.Link onClick={logout} as={Link} to="/">Logout</Nav.Link>
                                     </>
                                     :

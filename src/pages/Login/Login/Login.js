@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useAuthState, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import SciolLogin from '../SciolLogin/SciolLogin';
@@ -9,29 +9,36 @@ const Login = () => {
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
 
-    const [
-        signInWithEmailAndPassword,
-        user,
-        loading,
-        error,
-      ] = useSignInWithEmailAndPassword(auth);
+    const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
+    const [user, loading, error] = useAuthState(auth);
 
-    const handleLogin= event => {
+    const handleLogin = event => {
         event.preventDefault();
-        const email = event.target.email.value ;
-        const password = event.target.password.value ;
+        const email = event.target.email.value;
+        const password = event.target.password.value;
         signInWithEmailAndPassword(email, password);
     }
 
-    if(user){
+    if (user) {
         navigate(from, { replace: true });
     }
+
+    if (loading) {
+        return (
+            <div class="text-center my-5">
+                <div className="spinner-border my-5" role="status">
+                    <span  className="sr-only my-7"></span>
+                </div>
+            </div>
+        );
+    }
+
 
     return (
         <div className='container w-25 '>
             <h2 className='my-3'>Please Login!!</h2>
             <form onSubmit={handleLogin} className='mx-auto'>
-                <input type="email"  className='w-100 mb-3 p-2' name="email" id="" placeholder='Email' required />
+                <input type="email" className='w-100 mb-3 p-2' name="email" id="" placeholder='Email' required />
                 <br />
                 <input type="password" className='w-100 mb-3 p-2' name="password" id="" placeholder='Password' required />
                 <br />
@@ -39,6 +46,7 @@ const Login = () => {
             </form>
             <p>New create a account ? <Link to="/register">Register</Link> </p>
             <p>Password ? <a href=""> Reast</a> </p>
+            <p>{error?.message}</p>
             <SciolLogin></SciolLogin>
         </div>
     );

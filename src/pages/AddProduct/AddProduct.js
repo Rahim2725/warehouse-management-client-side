@@ -10,8 +10,8 @@ const AddProduct = () => {
     const [user] = useAuthState(auth);
     const { register, handleSubmit, reset } = useForm();
 
-    const onSubmit = event =>{
-       axios.post('http://localhost:5000/product', event)
+    const onSubmit = data=>{
+       axios.post('http://localhost:5000/product', data)
        .then(response => {
            console.log(response)
            const {data} = response ;
@@ -28,12 +28,13 @@ const AddProduct = () => {
         <div className='container text-center my-5'>
             <h1>Please Add Product</h1>
             <form className='form-container' onSubmit={handleSubmit(onSubmit)}>
-                <input type="text" className='mb-3' value={user.email} readOnly disabled {...register("email", {max: 99 })} />
-                <input type="text" className='mb-3' placeholder='Phone Name'{...register("name", {max: 99 })} />
-                <textarea type="text" className='mb-3 w-50 ' placeholder='Description'{...register("description",)} />
-                <input type="text" className='mb-3' placeholder='Product Price'{...register("price", {max: 99 })} />
-                <input type="text" className='mb-3' placeholder='Photo URL'{...register("img", {max: 99 })} />
-                <input type="text" className='mb-3' placeholder='Supplier Name'{...register("supplier_name", { max: 99 })} />
+                <input type="text" className='mb-3' value={user.email}  readOnly {...register("email",)} />
+                <input type="text" className='mb-3' placeholder='Phone Name'required {...register("name", )} />
+                <textarea type="text" className='mb-3 w-50 '  placeholder='Description'required {...register("description",)} />
+                <input type="number" className='mb-3' placeholder='Price' required {...register("price",)} />
+                <input type="number" className='mb-3' placeholder='quantity' required {...register("quantity",)} />
+                <input type="text" className='mb-3' placeholder='Photo URL' required {...register("img", )} />
+                <input type="text" className='mb-3' placeholder='Supplier Name' required {...register("supplier_name",)} />
                 <input type="submit" />
             </form>
         </div>

@@ -12,34 +12,45 @@ import RequireAuth from './pages/Login/RequireAuth/RequireAuth';
 import AddProduct from './pages/AddProduct/AddProduct';
 import { ToastContainer } from 'react-toastify';
 import { Toaster } from 'react-hot-toast';
+import MyProduct from './pages/MyProduct/MyProduct';
 
 function App() {
   return (
     <div >
       <Header></Header>
-     <Routes>
-       <Route path='/' element={<Home></Home>}></Route>
-       <Route path='/home' element={<Home></Home>}></Route>
-       <Route path='/blogs' element={<Blogs></Blogs>}></Route>
-       <Route path='/login' element={<Login></Login>}></Route>
+      <Routes>
+        <Route path='/' element={<Home></Home>}></Route>
+        <Route path='/home' element={<Home></Home>}></Route>
+        <Route path='/blogs' element={<Blogs></Blogs>}></Route>
+        <Route path='/login' element={<Login></Login>}></Route>
 
-       <Route path='/register' element={<Register></Register>}></Route>
-       <Route path='/products' element={<Products></Products>}></Route>
-       <Route path='/product/:productId' element={
-         <RequireAuth>
-           <ProductDetail></ProductDetail>
-         </RequireAuth>
-       }></Route> 
-     
-       <Route path='/addProduct' element={
-         <RequireAuth>
-           <AddProduct></AddProduct>
-         </RequireAuth>
-       }></Route>
-     
-     </Routes>
-     <Footer></Footer>
-     <Toaster/>
+        <Route path='/register' element={<Register></Register>}></Route>
+        <Route path='/products' element={
+          <RequireAuth>
+            <Products></Products>
+          </RequireAuth>}></Route>
+
+        <Route path='/product/:productId' element={
+          <RequireAuth>
+            <ProductDetail></ProductDetail>
+          </RequireAuth>
+        }></Route>
+
+        <Route path='/addProduct' element={
+          <RequireAuth>
+            <AddProduct></AddProduct>
+          </RequireAuth>
+        }></Route>
+
+        <Route path='/myproduct' element={
+          <RequireAuth>
+            <MyProduct></MyProduct>
+          </RequireAuth>
+        }></Route>
+
+      </Routes>
+      <Footer></Footer>
+      <Toaster />
     </div>
   );
 }
